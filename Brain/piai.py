@@ -13,7 +13,7 @@ url = "https://pi.ai/talk"
 scriptDirectory = pathlib.Path().absolute()
 chrome_driver_path = 'Brain\\chromedriver.exe'
 chrome_options = Options()
-chrome_options.add_argument("--headless=new")
+# chrome_options.add_argument("--headless=new")
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 chrome_options.add_argument('--log-level=3')
 service = Service(chrome_driver_path)
@@ -46,7 +46,7 @@ def Login(Id,Passcode):
 def Introduction():
 
     try:
-        driver.find_element(by=By.XPATH,value="/html/body/div/main/div/div/div[1]/div[4]/div/div[2]/div/div/textarea").send_keys("Introducion")
+        driver.find_element(by=By.XPATH,value="/html/body/div/main/div/div/div[3]/div[1]/div[4]/div/div/textarea").send_keys("Introducion")
     
     except:
         driver.find_element(by=By.XPATH,value="/html/body/div/main/div/div/div[1]/div[4]/div/div/div/div/textarea").send_keys("Introducion")

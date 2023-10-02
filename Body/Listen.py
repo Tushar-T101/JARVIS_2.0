@@ -14,7 +14,7 @@ try:
     url = "https://dictation.io/speech"
 
     # Set up Chrome options
-    chrome_driver_path = 'D:\\Jarvis\\Brain\\chromedriver.exe'
+    chrome_driver_path = 'C:\\D\\Codes\\JARVIS 2.0\\Brain\\chromedriver.exe'
     chrome_options = Options()
     chrome_options.add_argument("--headless=new")
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -66,7 +66,7 @@ while True:
         text = text.strip()
         
         # Write the text to a file
-        output_file_path = "D:\\Jarvis\\Body\\SpeechRecognition.txt"
+        output_file_path = "C:\\D\\Codes\\JARVIS 2.0\\Body\\SpeechRecognition.txt"
         with open(output_file_path, "w") as file_write:
             file_write.write(text)
 

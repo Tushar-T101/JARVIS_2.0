@@ -1,145 +1,187 @@
-# Installing and Importing all these packages 🖤
+# # Installing and Importing all these packages 🖤
 
-from time import sleep # Inbuilt
-from selenium import webdriver # pip install selenium
-from selenium.webdriver.chrome.options import Options # pip install selenium
-from selenium.webdriver.common.by import By # pip install selenium
-import warnings # Inbuilt
-from selenium.webdriver.chrome.service import Service
+# from time import sleep # Inbuilt
+# from selenium import webdriver # pip install selenium
+# from selenium.webdriver.chrome.options import Options # pip install selenium
+# from selenium.webdriver.common.by import By # pip install selenium
+# import warnings # Inbuilt
+# from selenium.webdriver.chrome.service import Service
 
-# Configuring the webdriver to automate the program for utilizing ChatGPT as a backend model.
+# # Configuring the webdriver to automate the program for utilizing ChatGPT as a backend model.
 
-warnings.simplefilter("ignore")
+# warnings.simplefilter("ignore")
 
-try:
-    Link = "https://gpt4login.com/use-chatgpt-online-free/"
-    chrome_driver_path = 'Brain\\chromedriver.exe'
-    chrome_options = Options()
-    chrome_options.headless = True
-    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    chrome_options.add_argument('--log-level=3')
-    service = Service(chrome_driver_path)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    driver.maximize_window()
-    driver.get(Link)
+# try:
+#     Link = "https://gpt4login.com/use-chatgpt-online-free/"
+#     chrome_driver_path = 'Brain\\chromedriver.exe'
+#     chrome_options = Options()
+#     chrome_options.headless = False
+#     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+#     chrome_options.add_argument('--log-level=3')
+#     service = Service(chrome_driver_path)
+#     driver = webdriver.Chrome(service=service, options=chrome_options)
+#     driver.maximize_window()
+#     driver.get(Link)
 
-except Exception as e:
-    print("To resolve this error, you should set up the ChromeDriver properly.")
-    print("*For the successful execution of this program, it is essential to configure and set up the ChromeDriver.")
-    print(e)
+# except Exception as e:
+#     print("To resolve this error, you should set up the ChromeDriver properly.")
+#     print("*For the successful execution of this program, it is essential to configure and set up the ChromeDriver.")
+#     print(e)
 
-# Storing the previous conversation ID for reference.
+# # Storing the previous conversation ID for reference.
 
-def FileReader():
+# def FileReader():
         
-    try:
-        File = open("Brain\\Chatnumber.txt","r")
-        Data = File.read()
-        File.close()
-        return Data
+#     try:
+#         File = open("Brain\\Chatnumber.txt","r")
+#         Data = File.read()
+#         File.close()
+#         return Data
 
-    except Exception as e:
-        print(e)
+#     except Exception as e:
+#         print(e)
 
-# Reading the previous conversation ID for reference.
+# # Reading the previous conversation ID for reference.
 
-def FileWriter(Data):
+# def FileWriter(Data):
 
-    try:
-        File = open("Brain\\Chatnumber.txt","w")
-        File.write(Data)
-        File.close()
+#     try:
+#         File = open("Brain\\Chatnumber.txt","w")
+#         File.write(Data)
+#         File.close()
 
-    except Exception as e:
-        print(e)
+#     except Exception as e:
+#         print(e)
 
-# Initiating the primary execution phase while utilizing ChatGPT as the backend model.
+# # Initiating the primary execution phase while utilizing ChatGPT as the backend model.
 
-def ChatGPTBrain(Query):
-    Query = str(Query)
+# def ChatGPTBrain(Query):
+#     Query = str(Query)
 
-    try:
-        driver.find_element(by=By.XPATH,value="/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[2]/div/textarea").send_keys(Query)
-        sleep(1)
+#     try:
+#         driver.find_element(by=By.XPATH,value="/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[2]/div/textarea").send_keys(Query)
+#         sleep(1)
 
-    except:
-        print("*The Input button or Input Section does not appear to be readily accessible or available within the current context or environment.*")
-        print("*Consider modifying the path for the 'Input' element, which is available on the website.*")
+#     except:
+#         print("*The Input button or Input Section does not appear to be readily accessible or available within the current context or environment.*")
+#         print("*Consider modifying the path for the 'Input' element, which is available on the website.*")
 
-    try:
-        driver.find_element(by=By.XPATH,value="/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[2]/button/span").click()
+#     try:
+#         driver.find_element(by=By.XPATH,value="/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[2]/button/span").click()
 
-    except:
-        print("*The Send.Keys() function or button does not appear to be readily accessible or available within the current context or environment.*")
-        print("*Consider modifying the path for the 'Send' button, which is available on the website.*")
+#     except:
+#         print("*The Send.Keys() function or button does not appear to be readily accessible or available within the current context or environment.*")
+#         print("*Consider modifying the path for the 'Send' button, which is available on the website.*")
 
-    try:
-        Data = str(FileReader())
+#     try:
+#         Data = str(FileReader())
 
-    except:
-        print("*Could Not Be able to access the file Where Chatnumber is saved for reference.")
+#     except:
+#         print("*Could Not Be able to access the file Where Chatnumber is saved for reference.")
 
-    while True:
+#     while True:
 
-        sleep(0.5)
+#         sleep(0.5)
         
-        try:
+#         try:
 
-            try:
-                AnswerXpath = f"/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[1]/div[{Data}]/span[2]"
-                Answer = driver.find_element(by=By.XPATH,value=AnswerXpath).is_displayed()
-                if str(Answer)=="True":
-                    break
+#             try:
+#                 AnswerXpath = f"/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[1]/div[{Data}]/span[2]"
+#                 Answer = driver.find_element(by=By.XPATH,value=AnswerXpath).is_displayed()
+#                 if str(Answer)=="True":
+#                     break
 
-            except:
-                # print("*The response text element cannot be located. Please ensure that you update its selector or locator.")
-                pass
+#             except:
+#                 # print("*The response text element cannot be located. Please ensure that you update its selector or locator.")
+#                 pass
 
-        except:
-            pass
+#         except:
+#             pass
     
-    try:
-        AnswerXpath = f"/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[1]/div[{Data}]/span[2]"
-        Answer = driver.find_element(by=By.XPATH,value=AnswerXpath).text
+#     try:
+#         AnswerXpath = f"/html/body/div[1]/div/div/main/article/div/div/div/div/div/div/div[2]/div/div/div[1]/div[{Data}]/span[2]"
+#         Answer = driver.find_element(by=By.XPATH,value=AnswerXpath).text
 
-    except:
-        print("*The response text element cannot be located. Please ensure that you update its selector or locator.")
+#     except:
+#         print("*The response text element cannot be located. Please ensure that you update its selector or locator.")
 
-    NewData = int(Data) + 2
-    FileWriter(Data=str(NewData))
-    return Answer
+#     NewData = int(Data) + 2
+#     FileWriter(Data=str(NewData))
+#     return Answer
 
-# Commencing the main execution phase.
+# # Commencing the main execution phase.
 
-def MainExecutionChatGPT():
+# def MainExecutionChatGPT():
 
-    print("")
-    print("Initiating the GPT-4 model.")
-    FileWriter(Data='3')
+#     print("")
+#     print("Initiating the GPT-4 model.")
+#     FileWriter(Data='3')
 
-    while True:
+#     while True:
             
-        try:
-            File = open("Body\\SpeechRecognition.txt","r")
-            Data = File.read()
-            File.close()
-            FileHistory = open("Brain\\HistoryChat.txt","r")
-            DataHistory = FileHistory.read()
-            FileHistory.close()
+#         try:
+#             File = open("Body\\SpeechRecognition.txt","r")
+#             Data = File.read()
+#             File.close()
+#             FileHistory = open("Brain\\HistoryChat.txt","r")
+#             DataHistory = FileHistory.read()
+#             FileHistory.close()
 
-            if str(Data)==str(DataHistory):
-                sleep(0.5)
-                pass
+#             if str(Data)==str(DataHistory):
+#                 sleep(0.5)
+#                 pass
 
-            else:
-                Result = ChatGPTBrain(Data)
-                print(Result)
+#             else:
+#                 Result = ChatGPTBrain(Data)
+#                 print(Result)
 
-                FileHistory = open("Brain\\HistoryChat.txt","w")
-                FileHistory.write(Data)
-                FileHistory.close()
+#                 FileHistory = open("Brain\\HistoryChat.txt","w")
+#                 FileHistory.write(Data)
+#                 FileHistory.close()
 
-        except Exception as e:
-            print(e)
+#         except Exception as e:
+#             print(e)
         
-MainExecutionChatGPT()
+# MainExecutionChatGPT()
+
+
+# Using OpenAI
+# API Key
+fileopen = open("api.txt", "r")
+API = fileopen.read()
+fileopen.close()
+
+# Imports
+import openai
+from dotenv import load_dotenv
+
+openai.api_key = API
+load_dotenv()
+completion = openai.Completion()
+
+def ReplyBrain(question, chat_log = None):
+    FileLog = open("Database\chat_log.txt", "r")
+    chat_log_template = FileLog.read()
+    FileLog.close()
+    
+    if chat_log is None:
+        chat_log = chat_log_template
+        
+    prompt = f"{chat_log}You : {question}\nJarvis : "
+    response = completion.create(
+        model = "text-davinci-002", 
+        prompt = prompt, 
+        temperature = 0.5,
+        max_tokens = 150,
+        top_p = 0.3,
+        frequency_penalty = 0.5,
+        presence_penalty = 0)
+    
+    answer = response.choices[0].text.strip()
+    chat_log_template_update = chat_log_template + f"\nYou : {question} \nJarvis : {answer}"
+    FileLog = open("Database\chat_log.txt", "w")
+    FileLog.write(chat_log_template_update)
+    FileLog.close()
+    return answer
+    
+    
